@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="169.958" tests="19" skipped="0" failures="4" errors="0">
+<testcase classname="F01_Register | guest users could create new accounts" name="user could create new account with valid data" time="10.363">
+<system-out><![CDATA[
+Given user goes to register page............................................passed
+When user selects gender type...............................................passed
+And user enters "automation" and "tester"...................................passed
+And user selects date of birth..............................................passed
+And user enters email"test@example.com".....................................passed
+And user enters "P@ssw0rd" and confirm it...................................passed
+And user click register button..............................................passed
+Then account is created successfully........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F02_Login | users could use login functionality to use their accounts" name="user could login with valid email and password" time="8.37">
+<system-out><![CDATA[
+Given user go to login page.................................................passed
+When user login with valid "test@example.com" and "P@ssw0rd"................passed
+And user press on login button..............................................passed
+Then user login to the system successfully..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F02_Login | users could use login functionality to use their accounts" name="user could not login with invalid email and password" time="8.138">
+<system-out><![CDATA[
+Given user go to login page.................................................passed
+When user login with invalid "wrong@example.com" and "P@ssw0rd".............passed
+And user press on login button..............................................passed
+Then user could not login to the system.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F03_Currencies | users could change currency to (€)" name="user could change currency from homepage to (€)" time="7.406">
+<system-out><![CDATA[
+When user Selects Euro currency from the dropdown list on the top left of home page.passed
+Then Euro Symbol (€) is shown on the four products displayed in Home page...passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | users could search for a product by name or serial number (sku)" name="user could search for a product by it's name - Example #1.1" time="7.575">
+<failure type="java.lang.AssertionError" message="The following asserts failed:
+	expected [true] but found [false],
+	expected [true] but found [false]">
+<![CDATA[java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false],
+	expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at org.example.stepDefs.D04_Search.listOfRelevantProductsContainsShouldAppearInTheSearchResultList(D04_Search.java:57)
+	at ✽.list of relevant products contains "book" should appear in the search result list(file:///C:/Users/live01/IdeaProjects/java1/demonopcommerce/src/main/resources/Features/F04_Search.feature:7)
+]]>
+</failure>
+<system-out><![CDATA[
+When user clicks search box.................................................passed
+And user enters product name as "book"......................................passed
+And clicks on search button.................................................passed
+Then list of relevant products contains "book" should appear in the search result list.failed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | users could search for a product by name or serial number (sku)" name="user could search for a product by it's name - Example #1.2" time="6.878">
+<system-out><![CDATA[
+When user clicks search box.................................................passed
+And user enters product name as "laptop"....................................passed
+And clicks on search button.................................................passed
+Then list of relevant products contains "laptop" should appear in the search result list.passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | users could search for a product by name or serial number (sku)" name="user could search for a product by it's name - Example #1.3" time="6.876">
+<system-out><![CDATA[
+When user clicks search box.................................................passed
+And user enters product name as "nike"......................................passed
+And clicks on search button.................................................passed
+Then list of relevant products contains "nike" should appear in the search result list.passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | users could search for a product by name or serial number (sku)" name="user could search for a product by it's sku (serial number) - Example #1.1" time="9.14">
+<system-out><![CDATA[
+When user clicks search box.................................................passed
+And user enters product serial number as "SCI_FAITH"........................passed
+And clicks on search button.................................................passed
+Then the right product with serial "SCI_FAITH" should appear in the search result list.passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | users could search for a product by name or serial number (sku)" name="user could search for a product by it's sku (serial number) - Example #1.2" time="8.619">
+<system-out><![CDATA[
+When user clicks search box.................................................passed
+And user enters product serial number as "APPLE_CAM"........................passed
+And clicks on search button.................................................passed
+Then the right product with serial "APPLE_CAM" should appear in the search result list.passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | users could search for a product by name or serial number (sku)" name="user could search for a product by it's sku (serial number) - Example #1.3" time="9.008">
+<system-out><![CDATA[
+When user clicks search box.................................................passed
+And user enters product serial number as "SF_PRO_11"........................passed
+And clicks on search button.................................................passed
+Then the right product with serial "SF_PRO_11" should appear in the search result list.passed
+]]></system-out>
+</testcase>
+<testcase classname="F05_hoverCategories | users could hover on one of the three main categories and select random subcategory" name="users could hover on one of the three main categories and select random subcategory" time="10.018">
+<system-out><![CDATA[
+When user selects and hovers on one of the three main categories............passed
+And user selects random one of the sub categories...........................passed
+Then the sub-category title is (equal or contains) the one you get it while selecting random sub-category.passed
+]]></system-out>
+</testcase>
+<testcase classname="F06_homesliders | users could select one of the two sliders on homepage and the slider directs him into product page" name="users could select product slider (S22 ultra)  and will be directed to it's page" time="9.279">
+<failure type="java.lang.AssertionError" message="expected [https://demo.nopcommerce.com/Galaxy-S22-Ultra] but found [https://demo.nopcommerce.com/]">
+<![CDATA[java.lang.AssertionError: expected [https://demo.nopcommerce.com/Galaxy-S22-Ultra] but found [https://demo.nopcommerce.com/]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at org.testng.Assert.assertEquals(Assert.java:665)
+	at org.example.stepDefs.D06_homeSliders.userShouldBeDirectedToSUltraPage(D06_homeSliders.java:25)
+	at ✽.user should be directed to s22 ultra page(file:///C:/Users/live01/IdeaProjects/java1/demonopcommerce/src/main/resources/Features/F06_homeSliders.feature:5)
+]]>
+</failure>
+<system-out><![CDATA[
+When user selects s22 ultra slider..........................................passed
+Then user should be directed to s22 ultra page..............................failed
+]]></system-out>
+</testcase>
+<testcase classname="F06_homesliders | users could select one of the two sliders on homepage and the slider directs him into product page" name="users could select product slider (Iphone 14)  and will be directed to it's page" time="6.275">
+<failure type="java.lang.AssertionError" message="expected [https://demo.nopcommerce.com/iphone-14-Pro] but found [https://demo.nopcommerce.com/]">
+<![CDATA[java.lang.AssertionError: expected [https://demo.nopcommerce.com/iphone-14-Pro] but found [https://demo.nopcommerce.com/]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at org.testng.Assert.assertEquals(Assert.java:665)
+	at org.example.stepDefs.D06_homeSliders.userShouldBeDirectedToIphonePage(D06_homeSliders.java:39)
+	at ✽.user should be directed to Iphone 14 page(file:///C:/Users/live01/IdeaProjects/java1/demonopcommerce/src/main/resources/Features/F06_homeSliders.feature:11)
+]]>
+</failure>
+<system-out><![CDATA[
+When user selects Iphone 14 slider..........................................passed
+Then user should be directed to Iphone 14 page..............................failed
+]]></system-out>
+</testcase>
+<testcase classname="F07_followUs | users could open followUs links" name="user opens facebook link" time="7.884">
+<system-out><![CDATA[
+When user opens facebook link...............................................passed
+Then "https://www.facebook.com/nopCommerce" is opened in new tab............passed
+]]></system-out>
+</testcase>
+<testcase classname="F07_followUs | users could open followUs links" name="user opens twitter link" time="8.078">
+<system-out><![CDATA[
+When user opens twitter link................................................passed
+Then "https://twitter.com/nopCommerce" is opened in new tab.................passed
+]]></system-out>
+</testcase>
+<testcase classname="F07_followUs | users could open followUs links" name="user opens rss link" time="8.341">
+<failure type="java.lang.IndexOutOfBoundsException" message="Index: 1, Size: 1">
+<![CDATA[java.lang.IndexOutOfBoundsException: Index: 1, Size: 1
+	at java.util.ArrayList.rangeCheck(ArrayList.java:659)
+	at java.util.ArrayList.get(ArrayList.java:435)
+	at org.example.stepDefs.D07_followUs.userOpensRssLink(D07_followUs.java:45)
+	at ✽.user opens rss link(file:///C:/Users/live01/IdeaProjects/java1/demonopcommerce/src/main/resources/Features/F07_followUs.feature:12)
+]]>
+</failure>
+<system-out><![CDATA[
+When user opens rss link....................................................failed
+Then "https://demo.nopcommerce.com/new-online-store-is-open" is opened in new tab.skipped
+]]></system-out>
+</testcase>
+<testcase classname="F07_followUs | users could open followUs links" name="user opens  youtube link" time="9.753">
+<system-out><![CDATA[
+When user opens youtube link................................................passed
+Then "https://www.youtube.com/user/nopCommerce" is opened in new tab........passed
+]]></system-out>
+</testcase>
+<testcase classname="F08_Wishlist | users could add products to Wishlist" name="user could add product of the four products shown on the Homepage to Wishlist ( HTC One M8 Android L 5.0 Lollipop )" time="5.821">
+<system-out><![CDATA[
+When you click on wishlist button ❤️  on this product "HTC One M8 Android L 5.0 Lollipop".passed
+Then you will see success message "The product has been added to your wishlist" with green background color.passed
+]]></system-out>
+</testcase>
+<testcase classname="F08_Wishlist | users could add products to Wishlist" name="user opens Wishlist and checks if product added correctly ( HTC One M8 Android L 5.0 Lollipop )" time="21.59">
+<system-out><![CDATA[
+When you click on wishlist button ❤️  on this product "HTC One M8 Android L 5.0 Lollipop".passed
+And wait until success message is disappeared...............................passed
+And click on Wishlist tab...................................................passed
+Then you should see your product is added correctly.........................passed
+]]></system-out>
+</testcase>
+</testsuite>
